@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌙 قصص الأنبياء للأطفال | من كتاب ابن كثير</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;700;800&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="stars-bg" id="starsBg"></div>
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">🕌 <span>قصص الأنبياء <small>للأطفال</small></span></div>
+    <div class="header-actions">
+      <div class="progress-mini" title="تقدمك في النجوم">
+        <span id="starCountTop">⭐ 0 / 25</span>
+        <div class="progress-bar"><div id="progressFill"></div></div>
+      </div>
+      <button id="themeBtn" class="btn-icon" title="وضع ليلي / نهاري">🌙</button>
+      <button id="rewardsBtn" class="btn-icon" title="جوائزي">🏆</button>
+      <button id="printAllBtn" class="btn-icon" title="طباعة كل القصص">🖨️</button>
+    </div>
+  </div>
+  <div class="source-badge">📚 مبسطة من تفسير وقصص ابن كثير للأطفال بلغة سهلة 🌈</div>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>أهلاً بك يا بطل! 🌟</h1>
+    <p>هيا نتعرف على 25 من أنبياء الله عليهم السلام، بقصص ملونة سهلة، وأدعية تحفظها، وعِبَر جميلة. كل قصة تُكملها تأخذ <b>⭐ نجمة</b>!</p>
+    <div class="hero-btns">
+      <button class="btn btn-primary" onclick="startJourney()">🚀 ابدأ الرحلة</button>
+      <button class="btn btn-soft" onclick="randomStory()">🎲 قصة مفاجئة</button>
+    </div>
+    <div class="badges-row" id="badgesRow"></div>
+  </div>
+  <div class="hero-art">
+    <div class="mascot">🧕👦📖</div>
+    <div class="orbit-stars">⭐ 🌙 ✨ 🌟 💫</div>
+  </div>
+</section>
+
+<section class="toolbar">
+  <input type="search" id="searchInput" placeholder="🔍 ابحث عن نبي... مثال: يوسف، نوح، موسى">
+  <div class="filters">
+    <button class="chip active" data-filter="all">الكل 🌈</button>
+    <button class="chip" data-filter="done">⭐ قصصي المنجزة</button>
+    <button class="chip" data-filter="todo">🌱 لم أقرأها بعد</button>
+  </div>
+</section>
+
+<main id="storiesGrid" class="grid"></main>
+
+<footer class="footer">
+  <p>💛 صُنع بحب لأطفال المسلمين — المحتوى مبسط من كتاب <b>قصص الأنبياء لابن كثير</b> | اللغة سهلة للأعمار 4 - 12 سنة</p>
+  <p>🖨️ يمكنك طباعة أي قصة مع دعائها وتلوينها ✏️ | <button class="link-btn" onclick="resetStars()">تصفير النجوم</button></p>
+</footer>
+
+<!-- Story Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" onclick="closeStory()">✖</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- Rewards Modal -->
+<div class="modal-overlay" id="rewardsOverlay">
+  <div class="modal rewards-modal">
+    <button class="modal-close" onclick="document.getElementById('rewardsOverlay').classList.remove('show')">✖</button>
+    <h2>🏆 لوحة المكافآت</h2>
+    <p>اجمع النجوم وافتح الأوسمة!</p>
+    <div id="rewardsGrid" class="rewards-grid"></div>
+    <div class="my-stars-big" id="myStarsBig"></div>
+  </div>
+</div>
+
+<!-- Print area -->
+<div id="printArea"></div>
+
+<div class="confetti-box" id="confettiBox"></div>
+<div class="toast" id="toast"></div>
+
+<script src="extras.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
